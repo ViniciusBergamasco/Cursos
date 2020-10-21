@@ -4,11 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+
+    <style>
+        body{
+            background:rgb(0, 0, 0);
+            color:white;
+            font: normal 10pt Arial;
+        }
+    </style>
 </head>
 <body> 
-    DOM - Document Object Model
-    <h1>Primeiros passos com o DOM</h1>
+    <h1>DOM - Document Object Model</h1>
     <p>Primeiro parágrafo</p>
+    <p id="p2">Segundo parágrafo</p>
+    <p class="paragrafo">Terceiro parágrafo</p>
+    <div name="jogodavelha">#########################</div>
+    <p id="lp">Último parágrafo</p>
+    <script>
+        /*Árvore DOM
+
+                -> location
+        window  -> document -> html -> head and body
+                -> history
+
+        Tipos de seleção:
+        -Por ID: getElementyByID
+        -Por marca: getElementsyByTagName()
+        -por nome: getElementsByName()
+        -por classe: getElementsByClassName()
+        -por seletor:
+                
+        */
+       //-Por marca: getElementsyByTagName()
+       var p1 = document.getElementsByTagName('p')[0]
+       document.write(p1.innerText + ' novamente')
+
+       //-Por ID: getElementyByID
+       var p2 = document.getElementById('p2')
+       p2.style.color = 'green'
+
+       //-por nome: getElementsByName()
+       var jgvelha = document.getElementsByName('jogodavelha')[0]
+       jgvelha.style.background = 'blue'
+
+       //-por classe: getElementsByClassName()
+       var p3 = document.getElementsByClassName('paragrafo')[0]
+       p3.style.background ='red'
+
+       //-por seletor: querySelector() e queryselectorAll()
+       lastp = document.querySelector('p#lp')
+       lastp.style.color = 'purple'
+
+    </script>
     
 </body>
 </html>
